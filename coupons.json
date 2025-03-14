@@ -1,0 +1,20 @@
+{
+  "available": [
+    "DISCOUNT20",
+    "FREESHIP",
+    "SPECIAL25",
+    "DEAL15",
+    "OFFER30",
+    "PROMO5",
+    "BONUS50",
+    "EXTRA15",
+    "GIFT25",
+    "SAVE10"
+  ],
+  "claimed": {
+    "::ffff:127.0.0.1": {
+      "coupon": "SAVE10",
+      "timestamp": 1741986647860
+    }
+  }
+}

@@ -1,0 +1,15 @@
+[build]
+  publish = "public"
+  command = "# no build command needed"
+
+[functions]
+  directory = "functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[build.environment]
+  # Environment variables will be set in the Netlify dashboard
+  # FAUNA_SECRET = "your_fauna_secret_key_here"

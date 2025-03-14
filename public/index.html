@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Round-Robin Coupon Distribution</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Coupon Distribution System</h1>
+    <p>Click the button below to claim your coupon!</p>
+    
+    <div class="coupon-container">
+      <button id="claimButton">Claim Coupon</button>
+      <div id="result" class="result-container"></div>
+      <div id="timer" class="timer-container"></div>
+    </div>
+    
+    <div class="info-container">
+      <h2>Created by Khushwant Singh Chouhan</h2>
+      <h2>How It Works</h2>
+      <ul>
+        <li>Each user can claim one coupon at a time</li>
+        <li>You must wait 1 hour before claiming another coupon</li>
+        <li>Coupons are distributed in a round-robin fashion</li>
+        <li>No login required - we use cookies to track your session</li>
+      </ul>
+      <h2>What I Have Used</h2>
+      <p>This coupon distribution system is built using modern web technologies and serverless architecture:</p>
+      <ul>
+        <li><strong>Frontend:</strong> HTML5, CSS3, and vanilla JavaScript for a lightweight, responsive user interface</li>
+        <li><strong>Backend:</strong> Netlify Functions (serverless) for handling coupon distribution logic</li>
+        <li><strong>Database:</strong> FaunaDB for storing coupons and user claims in a serverless, globally distributed database</li>
+        <li><strong>User Tracking:</strong> HTTP cookies and browser localStorage for identifying users without requiring login</li>
+        <li><strong>Distribution Algorithm:</strong> Round-robin system that cycles through available coupons fairly</li>
+        <li><strong>Security:</strong> Rate limiting (1 hour cooldown) to prevent abuse and ensure fair distribution</li>
+        <li><strong>Deployment:</strong> Netlify for continuous deployment and hosting of both static assets and serverless functions</li>
+      </ul>
+      <p>The system maintains two collections in FaunaDB: "coupons" for storing available coupon codes, and "claims" for tracking which users have claimed which coupons and when. When a user claims a coupon, it's moved to the end of the queue (round-robin) and a claim record is created with a timestamp to enforce the cooldown period.</p>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
